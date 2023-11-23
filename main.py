@@ -107,28 +107,20 @@ if __name__ == "__main__":
 
         # Use the simulated_annealing function
         result = dual_annealing(rastrigin_function, maxiter = 100, bounds=bounds)
-        # print("Optimal solution rastrigin DA:", result.x)
-        # print("Optimal value:", result.fun)
         results_rastrigin_da.append(result.fun)
 
         # Define the bounds for the Sphere Function
         bounds = [(-10, 10)] * 2
         result = dual_annealing(sphere_function, maxiter = 100, bounds=bounds)
-        # print("Optimal solution sphere DA:", result.x)
-        # print("Optimal value:", result.fun)
         results_sphere_da.append(result.fun)
 
         # Call the minimize function with SLSQP method
         initial_guess = np.random.uniform(-5.12, 5.12, dimension)
         result = minimize(rastrigin_function, initial_guess, method='SLSQP', options={'maxiter': 100})
-        # print("Optimal solution rastrigin SLSQP:", result.x)
-        # print("Optimal value:", result.fun)
         results_rastrigin_slsqp.append(result.fun)
 
         initial_guess = np.random.uniform(-10, 10, dimension)
         result = minimize(sphere_function, initial_guess, method='SLSQP', options={'maxiter': 100})
-        # print("Optimal solution sphere SLSQP:", result.x)
-        # print("Optimal value:", result.fun)
         results_sphere_slsqp.append(result.fun)
 
     # Calculate the average for each optimization method
