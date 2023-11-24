@@ -65,7 +65,7 @@ def pso(cost_function, initial_particle_positions, initial_velocities, max_iter)
 if __name__ == "__main__":
 
     # Define the number of iterations
-    num_iterations = 100
+    num_iterations = 150
 
     rastrigin_fn_output = rastrigin_function([0.5, -1.5])
     sphere_output = sphere_function([0.5, -1.5])
